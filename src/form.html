@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script>
+      // Function to handle form submission
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const commands = document.getElementById("commands").value;
+        fetch("/api/commands", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ commands }),
+        })
+          .then(() => {
+            console.log("Success");
+            alert("Commands submitted successfully!");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while submitting commands.");
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form action="/submit" method="post" onsubmit="handleSubmit(event)">
+      <label for="commands">commands:</label>
+      <textarea
+        id="commands"
+        name="commands"
+        rows="4"
+        cols="50"
+        placeholder="Enter claude commands here"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

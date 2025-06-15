@@ -1,0 +1,19 @@
+{
+  "name": "claude-hp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server": "tsx api/index.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3"
+  },
+  "engines": {
+    "npm": "DONOT_USE_NPM",
+    "yarn": "DONT_USE_YARN"
+  }
+}
