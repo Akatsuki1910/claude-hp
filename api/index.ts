@@ -8,7 +8,8 @@ app.use(express.json());
 
 const ROUTE = "commands";
 
-const filePath = "./commands.txt";
+const filePath = "/app/commands.txt";
+
 app.get(`/${ROUTE}`, (req, res) => {
   if (fs.existsSync(filePath)) {
     const data = fs.readFileSync(filePath, "utf8");
