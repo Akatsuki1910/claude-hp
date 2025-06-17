@@ -4,8 +4,23 @@
       "Bash(pnpm install)",
       "Bash(pnpm install:*)",
       "Bash(ls:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Write(src/**)",
+      "Edit(src/**)",
+
+      "Edit(package.json)",
+      "Edit(tsconfig.json)",
+      "Edit(README.md)",
+      "Write(package.json)",
+      "Write(tsconfig.json)",
+      "Write(README.md)"
     ],
-    "deny": ["Bash(rm:*)", "Write(conf/**)", "Write(./commands.txt)"]
+    "deny": [
+      "Bash(rm:*)",
+      "Write(conf/**)",
+      "Write(./commands.txt)",
+      "Write(src/form.html)",
+      "Edit(src/form.html)"
+    ]
   }
 }
