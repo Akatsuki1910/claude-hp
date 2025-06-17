@@ -3,16 +3,16 @@
 # ファイル名
 FILE="commands.txt"
 
-# 中身を読み込んで変数に格納
-if [ -f "$FILE" ]; then
-  CONTENT=$(cat "$FILE")
-
-  # ファイルの中身を削除
-  >"$FILE"
-
-  # 内容を出力
-  echo "$CONTENT"
-else
-  echo "commands.txt が存在しません" >&2
+# ファイルが存在しない or 空の場合はエラー
+if [ ! -s "$FILE" ]; then
   exit 1
 fi
+
+# 中身を読み取る
+CONTENT=$(cat "$FILE")
+
+# ファイルを空にする
+>"$FILE"
+
+# 読み取った内容を出力
+echo "$CONTENT"
