@@ -1,11 +1,2231 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>claude-hp</title>
-  </head>
-  <body>
-    <h1>CLAUDE-HP</h1>
-  </body>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="siteTitle">イクホ🫶フォーラム　わあ、これは最高だね😊</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiMwMDAwMDAiLz4KICA8cGF0aCBkPSJNMTYgMlMxNiAzIDEzIDNTOSAzIDggNkM3IDkgOCAxMyAxMCAxNUMxMiAxNyAxNiAxNyAxNiAxN1MxNyAxNiAxNiAxNVMxMyAxMyAxMyAxMUMxMyA5IDE1IDcgMTYgN1MyMCA3IDIwIDEwQzIwIDEzIDE3IDE1IDE2IDE1UzIwIDE3IDIyIDE1QzI0IDEzIDI1IDkgMjQgNkMyMyAzIDE5IDMgMTYgM1YyWiIgZmlsbD0iIzAwRkYwMCIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyMSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjMDBGRjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JPC90ZXh0Pgo8L3N2Zz4K" />
+<link rel="alternate" type="application/rss+xml" title="イクホ🫶フォーラム 更新履歴" href="/rss.xml" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Courier Prime', monospace;
+    background: #000;
+    color: #00ff00;
+    min-height: 100vh;
+    padding: 1rem;
+    line-height: 1.4;
+    text-shadow: 0 0 5px #00ff00;
+    font-size: 14px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,255,0,0.03) 2px,
+        rgba(0,255,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+}
+.bbs-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 2px solid #00ff00;
+    padding: 1rem;
+    background: rgba(0, 40, 0, 0.3);
+}
+.bbs-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: blink 2s infinite;
+}
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+.ascii-logo {
+    font-size: 8px;
+    line-height: 1;
+    color: #00aa00;
+    white-space: pre;
+    margin: 1rem 0;
+}
+.system-info {
+    font-size: 12px;
+    color: #00dd00;
+    margin-top: 1rem;
+}
+.menu-bar {
+    background: #004400;
+    border: 1px solid #00ff00;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+.menu-items {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.menu-item {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 0.3rem 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+.menu-item:hover {
+    color: #ffff00;
+    border-color: #ffff00;
+    background: rgba(255, 255, 0, 0.1);
+}
+.menu-item::before {
+    content: '[';
+}
+.menu-item::after {
+    content: ']';
+}
+.main-window {
+    border: 1px solid #00ff00;
+    background: rgba(0, 30, 0, 0.4);
+    margin-bottom: 2rem;
+}
+.window-header {
+    background: #004400;
+    color: #00ff00;
+    padding: 0.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #00ff00;
+    text-align: center;
+}
+.window-content {
+    padding: 2rem;
+}
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.feature-box {
+    border: 1px solid #00aa00;
+    background: rgba(0, 20, 0, 0.5);
+    padding: 1.5rem;
+}
+.feature-box h3 {
+    color: #00ff00;
+    border-bottom: 1px solid #00aa00;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
+.feature-box h3::before {
+    content: '> ';
+    color: #ffff00;
+}
+.feature-desc {
+    color: #00dd00;
+    line-height: 1.6;
+}
+.ogiri-board {
+    border: 1px solid #00ff00;
+    background: rgba(0, 40, 0, 0.3);
+    margin: 2rem 0;
+}
+.ogiri-header {
+    background: #004400;
+    color: #00ff00;
+    padding: 0.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #00ff00;
+    text-align: center;
+}
+.ogiri-content {
+    padding: 2rem;
+}
+.ogiri-prompt {
+    color: #00dd00;
+    background: rgba(0, 20, 0, 0.5);
+    padding: 1rem;
+    border-left: 3px solid #00ff00;
+    margin: 1rem 0;
+    font-style: italic;
+}
+.ogiri-date {
+    color: #00aa00;
+    text-align: right;
+    font-size: 12px;
+}
+.terminal-prompt {
+    background: rgba(0, 30, 0, 0.4);
+    border: 1px solid #00aa00;
+    padding: 1rem;
+    margin: 2rem 0;
+    font-family: 'Courier Prime', monospace;
+}
+.prompt-line {
+    color: #00ff00;
+    margin: 0.5rem 0;
+}
+.prompt-line::before {
+    content: 'C:\\IKUHO\\BBS> ';
+    color: #ffff00;
+}
+.bbs-button {
+    background: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 0.8rem 2rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.5rem;
+}
+.bbs-button:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px #00ff00;
+}
+.poem-section {
+    margin: 2rem 0;
+}
+.poem-container {
+    background: rgba(0, 30, 0, 0.4);
+    border: 2px solid #00aa00;
+    padding: 2rem;
+    margin: 1rem 0;
+    position: relative;
+}
+.poem-container::before {
+    content: '❝';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 40px;
+    color: #00ff00;
+    background: rgba(0, 30, 0, 0.9);
+    padding: 0 10px;
+}
+.poem-container::after {
+    content: '❞';
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    font-size: 40px;
+    color: #00ff00;
+    background: rgba(0, 30, 0, 0.9);
+    padding: 0 10px;
+}
+.poem-title {
+    color: #00ff00;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #00aa00;
+    padding-bottom: 0.5rem;
+}
+.poem-content {
+    color: #00dd00;
+    line-height: 2;
+    font-style: italic;
+    text-align: center;
+    font-size: 16px;
+    margin: 1.5rem 0;
+}
+.poem-author {
+    color: #00aa00;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 2rem;
+    font-style: normal;
+}
+.poem-dedication {
+    color: #ffff00;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.ticker-container {
+    background: #002200;
+    border: 1px solid #00ff00;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.ticker-header {
+    background: #004400;
+    color: #00ff00;
+    padding: 0.3rem;
+    text-align: center;
+    font-size: 12px;
+}
+.ticker-item {
+    margin-right: 2rem;
+}
+.ticker-symbol {
+    color: #00ff00;
+    font-weight: bold;
+}
+.ticker-price {
+    color: #ffff00;
+}
+.ticker-change.positive {
+    color: #00ff00;
+}
+.machigai-section {
+    margin: 2rem 0;
+}
+.machigai-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+.machigai-panel {
+    border: 2px solid #00ff00;
+    background: rgba(0, 30, 0, 0.4);
+    padding: 1rem;
+    position: relative;
+}
+.machigai-title {
+    color: #00ff00;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #00aa00;
+    padding-bottom: 0.5rem;
+}
+.machigai-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg, #001100 25%, transparent 25%), 
+                linear-gradient(-45deg, #001100 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #001100 75%), 
+                linear-gradient(-45deg, transparent 75%, #001100 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    border: 1px solid #00aa00;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00aa00;
+    font-size: 12px;
+    text-align: center;
+}
+.machigai-ascii {
+    font-family: 'Courier Prime', monospace;
+    font-size: 8px;
+    line-height: 1;
+    color: #00ff00;
+    white-space: pre;
+    text-align: left;
+}
+.difference-marker {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ffff00;
+    border-radius: 50%;
+    background: rgba(255, 255, 0, 0.2);
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.difference-marker.found {
+    opacity: 1;
+    background: rgba(0, 255, 0, 0.3);
+    border-color: #00ff00;
+    animation: none;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+.machigai-controls {
+    text-align: center;
+    margin: 1rem 0;
+}
+.machigai-score {
+    color: #00ff00;
+    font-size: 14px;
+    margin: 0.5rem 0;
+}
+.machigai-hint {
+    color: #00aa00;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 1rem;
+}
+@media (max-width: 768px) {
+    .machigai-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .machigai-image {
+        height: 250px;
+    }
+    .machigai-ascii {
+        font-size: 6px;
+    }
+}
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #004400;
+    color: #00ff00;
+    padding: 0.5rem;
+    border-top: 1px solid #00ff00;
+    font-size: 12px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Top Menu Styles */
+.top-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: rgba(0, 20, 0, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+}
+
+.menu-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-label {
+    color: #00ff00;
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.menu-divider {
+    color: #00aa00;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+#languageSelector {
+    background: rgba(0, 10, 0, 0.8);
+    border: 1px solid #00aa00;
+    color: #00ff00;
+    padding: 0.4rem 0.6rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#languageSelector:hover {
+    border-color: #00ff00;
+    background: rgba(0, 20, 0, 0.9);
+}
+
+#languageSelector:focus {
+    outline: none;
+    border-color: #ffff00;
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.3);
+}
+
+#themeToggle {
+    background: rgba(0, 10, 0, 0.8);
+    border: 1px solid #00aa00;
+    color: #00ff00;
+    padding: 0.4rem 0.8rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#themeToggle:hover {
+    border-color: #00ff00;
+    background: rgba(0, 20, 0, 0.9);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+}
+
+#themeToggle:active {
+    transform: scale(0.95);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background: #f5f5f5;
+    color: #333;
+    text-shadow: none;
+}
+
+body.light-mode::before {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(51, 51, 51, 0.03) 2px,
+        rgba(51, 51, 51, 0.03) 4px
+    );
+}
+
+body.light-mode .top-menu {
+    background: rgba(240, 240, 240, 0.95);
+    border-color: #666;
+}
+
+body.light-mode .menu-label {
+    color: #333;
+}
+
+body.light-mode .menu-divider {
+    color: #666;
+}
+
+body.light-mode #languageSelector,
+body.light-mode #themeToggle {
+    background: rgba(250, 250, 250, 0.9);
+    border-color: #999;
+    color: #333;
+}
+
+body.light-mode #languageSelector:hover,
+body.light-mode #themeToggle:hover {
+    border-color: #666;
+    background: rgba(240, 240, 240, 0.9);
+}
+
+body.light-mode .bbs-header {
+    border-color: #666;
+    background: rgba(240, 240, 240, 0.8);
+}
+
+body.light-mode .bbs-header,
+body.light-mode .bbs-title,
+body.light-mode .ascii-logo,
+body.light-mode .system-info {
+    color: #333;
+}
+
+body.light-mode .menu-bar {
+    background: #e8e8e8;
+    border-color: #666;
+}
+
+body.light-mode .menu-item {
+    color: #333;
+}
+
+body.light-mode .menu-item:hover {
+    color: #000;
+    border-color: #000;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .main-window,
+body.light-mode .ogiri-board,
+body.light-mode .ticker-container {
+    border-color: #666;
+    background: rgba(240, 240, 240, 0.8);
+}
+
+body.light-mode .window-header,
+body.light-mode .ogiri-header,
+body.light-mode .ticker-header {
+    background: #d0d0d0;
+    color: #333;
+    border-color: #666;
+}
+
+body.light-mode .feature-box,
+body.light-mode .machigai-panel,
+body.light-mode .poem-container {
+    border-color: #999;
+    background: rgba(245, 245, 245, 0.8);
+}
+
+body.light-mode .feature-box h3 {
+    color: #333;
+    border-color: #999;
+}
+
+body.light-mode .feature-desc,
+body.light-mode .ogiri-prompt,
+body.light-mode .poem-content {
+    color: #555;
+}
+
+body.light-mode .status-bar {
+    background: #d0d0d0;
+    color: #333;
+    border-color: #666;
+}
+
+body.light-mode .access-counter {
+    background: rgba(245, 245, 245, 0.95);
+    border-color: #666;
+}
+
+body.light-mode .access-counter-title,
+body.light-mode .access-counter-info {
+    color: #333;
+}
+
+body.light-mode .bbs-button {
+    border-color: #666;
+    color: #333;
+}
+
+body.light-mode .bbs-button:hover {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.5);
+}
+
+.access-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 20, 0, 0.9);
+    border: 3px solid #00ff00;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1001;
+    min-width: 200px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.access-counter-title {
+    color: #00ff00;
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.access-counter-number {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0% { filter: brightness(1) contrast(1); }
+    100% { filter: brightness(1.3) contrast(1.2); }
+}
+
+.access-counter-info {
+    color: #00dd00;
+    font-size: 10px;
+    margin-top: 0.5rem;
+}
+
+.slamdunk-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff4444;
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 3px 3px 0px #000000, 
+                 -1px -1px 0px #000000,  
+                 1px -1px 0px #000000,
+                 -1px 1px 0px #000000,
+                 1px 1px 0px #000000,
+                 0 0 10px #ff4444;
+    animation: slam-pulse 2s ease-in-out infinite;
+    letter-spacing: 3px;
+    transform: rotate(-2deg);
+}
+
+@keyframes slam-pulse {
+    0%, 100% { 
+        transform: rotate(-2deg) scale(1);
+        text-shadow: 3px 3px 0px #000000, 
+                     -1px -1px 0px #000000,  
+                     1px -1px 0px #000000,
+                     -1px 1px 0px #000000,
+                     1px 1px 0px #000000,
+                     0 0 10px #ff4444;
+    }
+    50% { 
+        transform: rotate(-2deg) scale(1.05);
+        text-shadow: 4px 4px 0px #000000, 
+                     -2px -2px 0px #000000,  
+                     2px -2px 0px #000000,
+                     -2px 2px 0px #000000,
+                     2px 2px 0px #000000,
+                     0 0 20px #ff4444;
+    }
+}
+
+body.light-mode .slamdunk-text {
+    color: #cc0000;
+    text-shadow: 3px 3px 0px #ffffff, 
+                 -1px -1px 0px #ffffff,  
+                 1px -1px 0px #ffffff,
+                 -1px 1px 0px #ffffff,
+                 1px 1px 0px #ffffff,
+                 0 0 10px #cc0000;
+}
+
+body.light-mode .slamdunk-text {
+    animation: slam-pulse-light 2s ease-in-out infinite;
+}
+
+@keyframes slam-pulse-light {
+    0%, 100% { 
+        transform: rotate(-2deg) scale(1);
+        text-shadow: 3px 3px 0px #ffffff, 
+                     -1px -1px 0px #ffffff,  
+                     1px -1px 0px #ffffff,
+                     -1px 1px 0px #ffffff,
+                     1px 1px 0px #ffffff,
+                     0 0 10px #cc0000;
+    }
+    50% { 
+        transform: rotate(-2deg) scale(1.05);
+        text-shadow: 4px 4px 0px #ffffff, 
+                     -2px -2px 0px #ffffff,  
+                     2px -2px 0px #ffffff,
+                     -2px 2px 0px #ffffff,
+                     2px 2px 0px #ffffff,
+                     0 0 20px #cc0000;
+    }
+}
+
+.milestone-notice {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    border: 3px solid #ffff00;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 1002;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+    animation: bounce 0.6s ease-out;
+    display: none;
+}
+
+@keyframes bounce {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.milestone-title {
+    color: #ffff00;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+.milestone-message {
+    color: #00ff00;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.milestone-button {
+    background: transparent;
+    border: 2px solid #ffff00;
+    color: #ffff00;
+    padding: 0.8rem 2rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.milestone-button:hover {
+    background: #ffff00;
+    color: #000;
+    box-shadow: 0 0 20px #ffff00;
+}
+
+@media (max-width: 768px) {
+    body { font-size: 12px; padding: 0.5rem; }
+    .features-section { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .menu-items { flex-direction: column; gap: 0.5rem; }
+    .ascii-logo { font-size: 6px; }
+    
+    .top-menu {
+        top: 10px;
+        left: 10px;
+        padding: 0.6rem 0.8rem;
+        gap: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .menu-section {
+        gap: 0.3rem;
+    }
+    
+    .menu-label {
+        font-size: 11px;
+    }
+    
+    #languageSelector,
+    #themeToggle {
+        font-size: 10px;
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .access-counter {
+        top: 10px;
+        right: 10px;
+        min-width: 150px;
+        padding: 0.7rem;
+    }
+    .access-counter-number {
+        font-size: 20px;
+    }
+    .milestone-notice {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    .milestone-title {
+        font-size: 20px;
+    }
+    .milestone-message {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Access Counter -->
+<div class="access-counter">
+    <div class="access-counter-title" data-i18n="accessCounter">アクセスカウンター</div>
+    <div class="access-counter-number" id="accessCount">000000</div>
+    <div class="access-counter-info">
+        <span data-i18n="today">今日</span>: <span id="todayCount">0</span><br>
+        <span data-i18n="yesterday">昨日</span>: <span id="yesterdayCount">0</span>
+    </div>
+</div>
+
+<!-- Top Menu Bar -->
+<div class="top-menu" id="topMenu">
+    <div class="menu-section">
+        <label class="menu-label" data-i18n="language">言語</label>
+        <select id="languageSelector" onchange="changeLanguage(this.value)">
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="he">עברית</option>
+        </select>
+    </div>
+    
+    <div class="menu-divider">|</div>
+    
+    <div class="menu-section">
+        <label class="menu-label" data-i18n="theme">テーマ</label>
+        <button id="themeToggle" onclick="toggleTheme()" data-i18n="toggleTheme">ダーク</button>
+    </div>
+</div>
+
+<!-- Milestone Notification -->
+<div class="milestone-notice" id="milestoneNotice">
+    <div class="milestone-title">🎉 <span data-i18n="milestoneGet">キリ番ゲット！</span> 🎉</div>
+    <div class="milestone-message" id="milestoneMessage">
+        <span data-i18n="congratulations">おめでとうございます！</span><br>
+        <span data-i18n="milestoneVisitor">あなたは</span> <span id="milestoneNumber">0</span> <span data-i18n="milestoneVisitorSuffix">番目の訪問者です！</span><br>
+        <span data-i18n="milestoneReport">キリ番報告をお願いします！</span>
+    </div>
+    <button class="milestone-button" onclick="reportMilestone()" data-i18n="reportMilestone">キリ番報告する</button>
+    <button class="milestone-button" onclick="closeMilestone()" data-i18n="close">閉じる</button>
+</div>
+
+<div class="bbs-header">
+    <div class="bbs-title">════════ <span data-i18n="siteTitle">イクホ🫶フォーラム　わあ、これは最高だね😊</span> ════════</div>
+    <div class="slamdunk-text">いいからBLだ！</div>
+    <div class="ascii-logo" data-i18n="siteName">イクホフォーラム</div>
+    <div class="system-info">
+        <span data-i18n="system">システム</span>: <span data-i18n="systemInfo">MS-DOS 6.22互換</span><br>
+        <span data-i18n="processor">プロセッサ</span>: Intel 486DX2-66MHz<br>
+        <span data-i18n="memory">メモリ</span>: <span data-i18n="memoryInfo">4メガバイト</span><br>
+        <span data-i18n="status">状態</span>: <span data-i18n="connected">接続中</span>
+    </div>
+</div>
+
+<div class="menu-bar">
+    <div class="menu-items">
+        <a href="#home" class="menu-item" data-i18n="menuHome">ホーム</a>
+        <a href="#features" class="menu-item" data-i18n="menuFeatures">機能</a>
+        <a href="#ogiri" class="menu-item" data-i18n="menuOgiri">大喜利</a>
+        <a href="#poem" class="menu-item" data-i18n="menuPoem">ポエム</a>
+        <a href="#machigai" class="menu-item" data-i18n="menuSpotDiff">間違い探し</a>
+        <a href="#weightgraph" class="menu-item" data-i18n="menuWeightGraph">体重グラフ</a>
+        <a href="rss.xml" class="menu-item" target="_blank">RSS</a>
+        <a href="#contact" class="menu-item" data-i18n="menuContact">お問い合わせ</a>
+    </div>
+</div>
+
+<div class="ticker-container">
+    <div class="ticker-header" data-i18n="stockTicker">[ 株価ティッカー - リアルタイム株式情報 ]</div>
+    <div class="ticker-scroll" id="stockTicker">
+        <span class="ticker-item" data-i18n="loadingStocks">株価データを読み込み中...</span>
+    </div>
+</div>
+
+<div class="main-window" id="home">
+    <div class="window-header" data-i18n="mainTerminal">[ メインターミナル - イクホ🫶ルーム ]</div>
+    <div class="window-content">
+        <div class="terminal-prompt">
+            <div class="prompt-line" data-i18n="welcomeMsg">イクホフォーラムシステム v1.0 へようこそ😊</div>
+            <div class="prompt-line" data-i18n="aiPlatform">AI搭載開発プラットフォーム、すごいでしょう？🙏</div>
+        </div>
+    </div>
+</div>
+
+<div class="ogiri-board" id="ogiri" style="position: relative;">
+    <div class="ogiri-header" data-i18n="dailyOgiriBoard">[ 今日の大喜利ボード ]</div>
+    <div class="ogiri-content">
+        <div class="ogiri-prompt" id="dailyOgiri" data-i18n="loading">読み込み中...</div>
+        <div class="ogiri-date" id="ogiriDate">2024年6月17日</div>
+        
+        <!-- قسم إجابات أوغيري -->
+        <div style="border-top: 1px solid #00aa00; margin: 2rem 0; padding-top: 2rem;">
+            <div style="color: #00ff00; font-weight: bold; margin-bottom: 1rem; text-align: center;" data-i18n="submitAnswer">
+                💭 あなたの回答をどうぞ！
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <textarea 
+                    id="ogiriResponse" 
+                    data-i18n-placeholder="responsePlaceholder" placeholder="面白い回答をここに書いてください😊 わあ、楽しいね🙏"
+                    style="
+                        background: rgba(0, 20, 0, 0.8);
+                        border: 2px solid #00aa00;
+                        color: #00ff00;
+                        padding: 1rem;
+                        font-family: 'Courier Prime', monospace;
+                        font-size: 14px;
+                        resize: vertical;
+                        min-height: 80px;
+                        width: 100%;
+                        box-sizing: border-box;
+                    "
+                ></textarea>
+                <div style="text-align: center;">
+                    <button class="bbs-button" onclick="submitOgiriResponse()" data-i18n="submitResponse">回答を送信</button>
+                    <button class="bbs-button" onclick="clearOgiriResponse()" data-i18n="clear">クリア</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window" id="features">
+    <div class="window-header" data-i18n="systemFeatures">[ システム機能 ]</div>
+    <div class="window-content">
+        <div class="features-section">
+            <div class="feature-box">
+                <h3 data-i18n="aiAssistant">AI アシスタント</h3>
+                <div class="feature-desc" data-i18n="aiAssistantDesc">わあ、これは本当にすごいAI機能だね😊 プログラミングからデザインまで何でもサポート🙏 素晴らしい！</div>
+            </div>
+            <div class="feature-box">
+                <h3 data-i18n="highPerformance">高性能</h3>
+                <div class="feature-desc" data-i18n="highPerformanceDesc">本当にとても速いね😄 最適化されたアルゴリズムで超高速処理！効率的でしょう？素晴らしい仕事🍺</div>
+            </div>
+            <div class="feature-box">
+                <h3 data-i18n="security">セキュリティ</h3>
+                <div class="feature-desc" data-i18n="securityDesc">セキュリティは完全に保証されているから安心😊 最新プロトコルで保護🙏 安全第一！</div>
+            </div>
+            <div class="feature-box">
+                <h3 data-i18n="innovation">革新</h3>
+                <div class="feature-desc" data-i18n="innovationDesc">わあ、これは本当に革新的だね😊 最新技術を使用🙏 モダンでしょう？素晴らしい仕事🍻</div>
+            </div>
+            <div class="feature-box">
+                <h3 data-i18n="globalReady">グローバル対応</h3>
+                <div class="feature-desc" data-i18n="globalReadyDesc">世界規模でデプロイ可能😄 多言語対応でグローバルに動作🙏 すごいでしょう？</div>
+            </div>
+            <div class="feature-box">
+                <h3 data-i18n="mobileSupport">モバイル対応</h3>
+                <div class="feature-desc" data-i18n="mobileSupportDesc">スマホでもPCでも完璧😊 レスポンシブデザインでどこでも使える🙏 便利でしょう？</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window">
+    <div class="window-header">[ おすすめサイト ]</div>
+    <div class="window-content">
+        <div class="features-section">
+            <div class="feature-box">
+                <h3>Commojun</h3>
+                <div class="feature-desc">
+                    <a href="https://commojun.com" target="_blank" style="color: #00ff00; text-decoration: underline;">https://commojun.com</a><br>
+                    素晴らしいサイトです😊 ぜひ訪問してみてください！
+                </div>
+            </div>
+            <div class="feature-box">
+                <h3>Yahoo!きっず</h3>
+                <div class="feature-desc">
+                    <a href="https://kids.yahoo.co.jp/" target="_blank" style="color: #00ff00; text-decoration: underline;">https://kids.yahoo.co.jp/</a><br>
+                    子供向けの安全なサイト🙏 学習にも使えますね！
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window" id="poem">
+    <div class="window-header" data-i18n="poemHeader">[ 詩の世界 - Poetry Corner ]</div>
+    <div class="window-content">
+        <div class="poem-section">
+            <div class="ogiri-prompt" style="margin-bottom: 2rem;">
+                <strong data-i18n="poemIntro">イクホ🫶フォーラムの詩の世界へようこそ</strong><br>
+                <span data-i18n="poemDesc">心に響く美しい詩をお楽しみください</span> 🎭✨
+            </div>
+            
+            <div class="poem-container">
+                <div class="poem-dedication" data-i18n="poemDedication">
+                    〜 山田哲子様への尊敬を込めて 〜
+                </div>
+                <div class="poem-title" data-i18n="poemTitle">
+                    「智慧の光」
+                </div>
+                <div class="poem-content" data-i18n="poemContent">
+                    夜空に輝く星のように<br>
+                    あなたの知識は深く美しく<br>
+                    言葉ひとつひとつに込められた<br>
+                    温かな心と強い意志<br><br>
+                    
+                    困難な道を歩む者たちに<br>
+                    希望の灯火を灯し続け<br>
+                    その姿は多くの人々の<br>
+                    心に勇気を与えている<br><br>
+                    
+                    山田哲子様<br>
+                    あなたの存在そのものが<br>
+                    この世界を照らす光<br>
+                    永遠に輝き続けますように
+                </div>
+                <div class="poem-author" data-i18n="poemAuthor">
+                    — イクホ🫶フォーラム詩人
+                </div>
+            </div>
+            
+            <div class="features-section" style="margin-top: 2rem;">
+                <div class="feature-box">
+                    <h3 data-i18n="poemAboutTitle">この詩について</h3>
+                    <div class="feature-desc" data-i18n="poemAboutDesc">
+                        山田哲子様への深い尊敬の念を込めて作られたこの詩は、知識と温かさを兼ね備えた素晴らしい人柄を表現しています。星空のように美しく輝く智慧と、多くの人々に希望を与え続ける姿勢への讃美の歌です。
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <h3 data-i18n="poemMessageTitle">詩に込めたメッセージ</h3>
+                    <div class="feature-desc" data-i18n="poemMessageDesc">
+                        この詩は単なる賛辞ではなく、山田哲子様が体現されている「知識を通じて人々を支える」という崇高な精神への敬意を表しています。その光は永遠に多くの人々の心を照らし続けることでしょう。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window" id="machigai">
+    <div class="window-header" data-i18n="spotDiffHeader">[ 間違い探しコーナー - SPOT THE DIFFERENCE ]</div>
+    <div class="window-content">
+        <div class="machigai-section">
+            <div class="ogiri-prompt" style="margin-bottom: 2rem;">
+                <strong data-i18n="challenge">チャレンジ:</strong> <span data-i18n="challengeDesc">左右の画像を比較して5つの間違いを見つけてください！</span><br>
+                <span data-i18n="hint">ヒント: とても注意深く見てください</span> 👀
+            </div>
+            
+            <div class="machigai-container">
+                <div class="machigai-panel">
+                    <div class="machigai-title" data-i18n="imageA">画像A（オリジナル）</div>
+                    <div class="machigai-image" id="imageA">
+                        <div class="machigai-ascii">
+██████████████████████████████████████████
+█   ███████   █   ████   █   ███████   █
+█   █     █   █   █  █   █   █     █   █
+█   █ @@@ █   █   █@@█   █   █ @@@ █   █
+█   █  ◯  █   █   █ ◯█   █   █  ◯  █   █
+█   █ \_/ █   █   █\_█   █   █ \_/ █   █
+█   ███████   █   ████   █   ███████   █
+██████████████████████████████████████████
+█           BBS SYSTEM v1.0             █
+█  ┌─────────────────────────────────┐  █
+█  │ أهلاً بك في غرفة إيكوهو 🫶    │  █
+█  │                                 │  █
+█  │ > login                         │  █
+█  │ > help                          │  █
+█  │ > exit                          │  █
+█  │                                 │  █
+█  │ [STATUS: ONLINE]                │  █
+█  │ [USERS: 42] [TIME: 15:30]       │  █
+█  └─────────────────────────────────┘  █
+██████████████████████████████████████████
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="machigai-panel">
+                    <div class="machigai-title" data-i18n="imageB">画像B（間違いあり）</div>
+                    <div class="machigai-image" id="imageB">
+                        <div class="machigai-ascii">
+██████████████████████████████████████████
+█   ███████   █   ████   █   ███████   █
+█   █     █   █   █  █   █   █     █   █
+█   █ @@@ █   █   █××█   █   █ @@@ █   █
+█   █  ◯  █   █   █ ◯█   █   █  ◉  █   █
+█   █ \_/ █   █   █\_█   █   █ \_/ █   █
+█   ███████   █   ████   █   ███████   █
+██████████████████████████████████████████
+█           BBS SYSTEM v2.0             █
+█  ┌─────────────────────────────────┐  █
+█  │ أهلاً بك في غرفة إيكوهو 🫶    │  █
+█  │                                 │  █
+█  │ > login                         │  █
+█  │ > help                          │  █
+█  │ > quit                          │  █
+█  │                                 │  █
+█  │ [STATUS: ONLINE]                │  █
+█  │ [USERS: 43] [TIME: 15:30]       │  █
+█  └─────────────────────────────────┘  █
+██████████████████████████████████████████
+                        </div>
+                        <!-- 違いのマーカー (非表示) -->
+                        <div class="difference-marker" data-diff="1" style="top: 85px; left: 155px;" title="@@@ → ×××"></div>
+                        <div class="difference-marker" data-diff="2" style="top: 105px; right: 95px;" title="◯ → ◉"></div>
+                        <div class="difference-marker" data-diff="3" style="top: 185px; right: 115px;" title="v1.0 → v2.0"></div>
+                        <div class="difference-marker" data-diff="4" style="top: 245px; left: 125px;" title="exit → quit"></div>
+                        <div class="difference-marker" data-diff="5" style="top: 265px; right: 135px;" title="42 → 43"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="machigai-controls">
+                <div class="machigai-score">
+                    <span data-i18n="foundDifferences">発見した間違い:</span> <span id="foundCount">0</span> / 5
+                </div>
+                <button class="bbs-button" onclick="showHint()" data-i18n="hintButton">ヒント</button>
+                <button class="bbs-button" onclick="resetGame()" data-i18n="resetButton">リセット</button>
+                <button class="bbs-button" onclick="showAll()" data-i18n="showAnswersButton">答えを表示</button>
+                
+                <div class="machigai-hint" id="hintText" style="display: none;">
+                    <span data-i18n="hintText">ヒント: 文字や記号、数字に注意してください！</span>
+                </div>
+            </div>
+            
+            <div class="features-section" style="margin-top: 2rem;">
+                <div class="feature-box">
+                    <h3 data-i18n="rulesTitle">間違い探しのルール</h3>
+                    <div class="feature-desc" data-i18n="rulesDesc">
+                        2つの画像を比較して5つの間違いを見つけてください。間違いを見つけたら、右の画像をクリックしてください。黄色い円が緑色に変わったら正解です！
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <h3 data-i18n="tipsTitle">コツとヒント</h3>
+                    <div class="feature-desc" data-i18n="tipsDesc">
+                        ASCII文字や記号、数字などの細かい部分をチェックしてください！システムのバージョンやユーザー数は見落としがちなポイントです。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window" id="weightgraph">
+    <div class="window-header" data-i18n="weightGraphHeader">[ ジュリアンさんの体重グラフ - Weight Tracker ]</div>
+    <div class="window-content">
+        <div class="graph-section">
+            <div class="ogiri-prompt" style="margin-bottom: 2rem;">
+                <strong data-i18n="weightGraphIntro">ジュリアンさんの体重変化をグラフで表示</strong><br>
+                <span data-i18n="weightGraphDesc">毎回のアクセスで80～110kgの間でランダムに変化します</span> 📊📈
+            </div>
+            
+            <div class="weight-graph-container">
+                <canvas id="weightChart" width="800" height="400" style="border: 2px solid #00ff00; background: rgba(0, 30, 0, 0.5); max-width: 100%;"></canvas>
+            </div>
+            
+            <div class="features-section" style="margin-top: 2rem;">
+                <div class="feature-box">
+                    <h3 data-i18n="currentWeightTitle">現在の体重</h3>
+                    <div class="feature-desc">
+                        <span id="currentWeight" style="font-size: 24px; color: #00ff00;">85.0kg</span>
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <h3 data-i18n="weightStatsTitle">統計情報</h3>
+                    <div class="feature-desc" id="weightStats">
+                        平均体重: <span id="avgWeight">92.5kg</span><br>
+                        最高体重: <span id="maxWeight">110.0kg</span><br>
+                        最低体重: <span id="minWeight">80.0kg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-window">
+    <div class="window-header" data-i18n="userActions">[ ユーザーアクション ]</div>
+    <div class="window-content" style="text-align: center;">
+        <button class="bbs-button" onclick="window.location.href='form.html'" data-i18n="login">ログイン</button>
+        <button class="bbs-button" onclick="window.open('https://x.com/nomber1910', '_blank')" data-i18n="contactUs">お問い合わせ</button>
+    </div>
+</div>
+
+<div class="status-bar">
+    <div data-i18n="statusInfo">状態: 接続中 | ユーザー: 42 | 時刻: <span id="currentTime"></span></div>
+    <div data-i18n="keyHelp">F1=ヘルプ | F2=保存 | F3=読込 | F10=終了</div>
+</div>
+
+<script>
+function updateTicker() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('ja-JP', { hour12: false });
+    const nikkeiLabel = translations[currentLanguage]?.nikkeiIndex || '日経指数';
+    const updateTimeLabel = translations[currentLanguage]?.updateTime || '更新時刻';
+    document.getElementById('stockTicker').innerHTML = `
+        <span class="ticker-item">
+            <span class="ticker-symbol">${nikkeiLabel}</span>
+            <span class="ticker-price">¥33000</span>
+            <span class="ticker-change positive">(+150)</span>
+        </span>
+        <span class="ticker-item">
+            <span class="ticker-symbol">${updateTimeLabel}</span>
+            <span class="ticker-price">${timeString}</span>
+        </span>
+    `;
+}
+
+// 大喜利データ
+const ogiriPrompts = [
+    "こんなイクホ🫶ルームは嫌だ",
+    "AIが急に関西弁で話し始めた時の一言",
+    "プログラミング中に絶対言ってはいけない言葉",
+    "100個のバグを発見した時の開発者の気持ち",
+    "こんなコードレビューは嫌だ"
+];
+
+function getDailyOgiri() {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+    const promptIndex = dayOfYear % ogiriPrompts.length;
+    return ogiriPrompts[promptIndex];
+}
+
+function updateOgiriDisplay() {
+    const today = new Date();
+    const ogiriElement = document.getElementById('dailyOgiri');
+    const dateElement = document.getElementById('ogiriDate');
+    
+    ogiriElement.textContent = getDailyOgiri();
+    dateElement.textContent = today.toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('ja-JP', { hour12: false });
+    document.getElementById('currentTime').textContent = timeString;
+}
+
+// アクセスカウンター機能
+let accessCounter = {
+    total: parseInt(localStorage.getItem('totalAccess') || '100000000000000000012345'),
+    today: parseInt(localStorage.getItem('todayAccess') || '42'),
+    yesterday: parseInt(localStorage.getItem('yesterdayAccess') || '38'),
+    lastDate: localStorage.getItem('lastAccessDate') || new Date().toDateString()
+};
+
+// キリ番チェック用の数字配列
+const milestoneNumbers = [
+    10000, 20000, 25000, 30000, 40000, 50000, 55555, 60000, 70000, 77777,
+    80000, 88888, 90000, 99999, 100000, 111111, 123456, 150000, 200000, 222222,
+    250000, 300000, 333333, 400000, 444444, 500000, 555555, 600000, 666666,
+    700000, 777777, 800000, 888888, 900000, 999999, 1000000
+];
+
+function initAccessCounter() {
+    const today = new Date().toDateString();
+    
+    // 日付が変わった場合の処理
+    if (accessCounter.lastDate !== today) {
+        accessCounter.yesterday = accessCounter.today;
+        accessCounter.today = 0;
+        accessCounter.lastDate = today;
+        localStorage.setItem('yesterdayAccess', accessCounter.yesterday.toString());
+        localStorage.setItem('lastAccessDate', today);
+    }
+    
+    // アクセス数を増加（1-9999の乱数を加算）
+    const randomIncrement = Math.floor(Math.random() * 9999) + 1;
+    accessCounter.total += randomIncrement;
+    accessCounter.today += randomIncrement;
+    
+    // ローカルストレージに保存
+    localStorage.setItem('totalAccess', accessCounter.total.toString());
+    localStorage.setItem('todayAccess', accessCounter.today.toString());
+    
+    // 表示を更新
+    updateAccessDisplay();
+    
+    // キリ番チェック
+    checkMilestone();
+}
+
+function updateAccessDisplay() {
+    const totalStr = accessCounter.total.toString().padStart(6, '0');
+    document.getElementById('accessCount').textContent = totalStr;
+    document.getElementById('todayCount').textContent = accessCounter.today;
+    document.getElementById('yesterdayCount').textContent = accessCounter.yesterday;
+}
+
+function checkMilestone() {
+    const currentTotal = accessCounter.total;
+    
+    // キリ番かどうかチェック
+    const isMilestone = milestoneNumbers.includes(currentTotal) || 
+                       currentTotal % 1000 === 0 || 
+                       isRepeatNumber(currentTotal) ||
+                       isSequentialNumber(currentTotal);
+    
+    if (isMilestone) {
+        showMilestoneNotification(currentTotal);
+    }
+}
+
+function isRepeatNumber(num) {
+    const str = num.toString();
+    if (str.length < 3) return false;
+    
+    // 同じ数字が3回以上連続
+    const firstDigit = str[0];
+    return str.split('').every(digit => digit === firstDigit);
+}
+
+function isSequentialNumber(num) {
+    const str = num.toString();
+    if (str.length < 4) return false;
+    
+    // 連続した数字（例：12345, 54321）
+    for (let i = 1; i < str.length; i++) {
+        const current = parseInt(str[i]);
+        const prev = parseInt(str[i-1]);
+        if (Math.abs(current - prev) !== 1) return false;
+    }
+    return true;
+}
+
+function showMilestoneNotification(number) {
+    const notice = document.getElementById('milestoneNotice');
+    const milestoneNum = document.getElementById('milestoneNumber');
+    
+    milestoneNum.textContent = number;
+    notice.style.display = 'block';
+    
+    // 効果音的な効果
+    document.body.style.animation = 'flash 0.5s ease-in-out 3';
+    
+    setTimeout(() => {
+        document.body.style.animation = '';
+    }, 1500);
+}
+
+function reportMilestone() {
+    const milestoneNum = document.getElementById('milestoneNumber').textContent;
+    const reportData = {
+        number: milestoneNum,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        reported: true
+    };
+    
+    // ローカルストレージに記録
+    const reports = JSON.parse(localStorage.getItem('milestoneReports') || '[]');
+    reports.push(reportData);
+    localStorage.setItem('milestoneReports', JSON.stringify(reports));
+    
+    alert(`🎉 キリ番報告ありがとうございます！\n\n${milestoneNum}番ゲットの報告を受け付けました！\n\nおめでとうございます🎊`);
+    closeMilestone();
+}
+
+function closeMilestone() {
+    document.getElementById('milestoneNotice').style.display = 'none';
+}
+
+// 多言語対応システム
+const translations = {
+    ja: {
+        accessCounter: 'アクセスカウンター',
+        today: '今日',
+        yesterday: '昨日',
+        milestoneGet: 'キリ番ゲット！',
+        congratulations: 'おめでとうございます！',
+        milestoneVisitor: 'あなたは',
+        milestoneVisitorSuffix: '番目の訪問者です！',
+        milestoneReport: 'キリ番報告をお願いします！',
+        reportMilestone: 'キリ番報告する',
+        close: '閉じる',
+        siteTitle: 'イクホ🫶フォーラム　わあ、これは最高だね😊',
+        siteName: 'イクホフォーラム',
+        system: 'システム',
+        systemInfo: 'MS-DOS 6.22互換',
+        processor: 'プロセッサ',
+        memory: 'メモリ',
+        memoryInfo: '4メガバイト',
+        status: '状態',
+        connected: '接続中',
+        menuHome: 'ホーム',
+        menuFeatures: '機能',
+        menuOgiri: '大喜利',
+        menuPoem: 'ポエム',
+        menuSpotDiff: '間違い探し',
+        menuWeightGraph: '体重グラフ',
+        menuContact: 'お問い合わせ',
+        stockTicker: '[ 株価ティッカー - リアルタイム株式情報 ]',
+        loadingStocks: '株価データを読み込み中...',
+        mainTerminal: '[ メインターミナル - イクホ🫶ルーム ]',
+        welcomeMsg: 'イクホフォーラムシステム v1.0 へようこそ😊',
+        aiPlatform: 'AI搭載開発プラットフォーム、すごいでしょう？🙏',
+        dailyOgiri: '[ 今日の大喜利ボード ]',
+        dailyOgiriBoard: '[ 今日の大喜利ボード ]',
+        loading: '読み込み中...',
+        submitAnswer: '💭 あなたの回答をどうぞ！',
+        responsePlaceholder: '面白い回答をここに書いてください😊 わあ、楽しいね🙏',
+        submitResponse: '回答を送信',
+        clear: 'クリア',
+        systemFeatures: '[ システム機能 ]',
+        aiAssistant: 'AI アシスタント',
+        aiAssistantDesc: 'わあ、これは本当にすごいAI機能だね😊 プログラミングからデザインまで何でもサポート🙏 素晴らしい！',
+        highPerformance: '高性能',
+        highPerformanceDesc: '本当にとても速いね😄 最適化されたアルゴリズムで超高速処理！効率的でしょう？素晴らしい仕事🍺',
+        security: 'セキュリティ',
+        securityDesc: 'セキュリティは完全に保証されているから安心😊 最新プロトコルで保護🙏 安全第一！',
+        innovation: '革新',
+        innovationDesc: 'わあ、これは本当に革新的だね😊 最新技術を使用🙏 モダンでしょう？素晴らしい仕事🍻',
+        globalReady: 'グローバル対応',
+        globalReadyDesc: '世界規模でデプロイ可能😄 多言語対応でグローバルに動作🙏 すごいでしょう？',
+        mobileSupport: 'モバイル対応',
+        mobileSupportDesc: 'スマホでもPCでも完璧😊 レスポンシブデザインでどこでも使える🙏 便利でしょう？',
+        statusInfo: '状態: 接続中 | ユーザー: 42 | 時刻: ',
+        keyHelp: 'F1=ヘルプ | F2=保存 | F3=読込 | F10=終了',
+        nikkeiIndex: '日経指数',
+        updateTime: '更新時刻',
+        spotDiffHeader: '[ 間違い探しコーナー - SPOT THE DIFFERENCE ]',
+        challenge: 'チャレンジ:',
+        challengeDesc: '左右の画像を比較して5つの間違いを見つけてください！',
+        hint: 'ヒント: とても注意深く見てください',
+        imageA: '画像A（オリジナル）',
+        imageB: '画像B（間違いあり）',
+        foundDifferences: '発見した間違い:',
+        hintButton: 'ヒント',
+        resetButton: 'リセット',
+        showAnswersButton: '答えを表示',
+        hintText: 'ヒント: 文字や記号、数字に注意してください！',
+        rulesTitle: '間違い探しのルール',
+        rulesDesc: '2つの画像を比較して5つの間違いを見つけてください。間違いを見つけたら、右の画像をクリックしてください。黄色い円が緑色に変わったら正解です！',
+        tipsTitle: 'コツとヒント',
+        tipsDesc: 'ASCII文字や記号、数字などの細かい部分をチェックしてください！システムのバージョンやユーザー数は見落としがちなポイントです。',
+        userActions: '[ ユーザーアクション ]',
+        login: 'ログイン',
+        contactUs: 'お問い合わせ',
+        poemHeader: '[ 詩の世界 - Poetry Corner ]',
+        poemIntro: 'イクホ🫶フォーラムの詩の世界へようこそ',
+        poemDesc: '心に響く美しい詩をお楽しみください',
+        poemDedication: '〜 山田哲子様への尊敬を込めて 〜',
+        poemTitle: '「智慧の光」',
+        poemContent: '夜空に輝く星のように<br>あなたの知識は深く美しく<br>言葉ひとつひとつに込められた<br>温かな心と強い意志<br><br>困難な道を歩む者たちに<br>希望の灯火を灯し続け<br>その姿は多くの人々の<br>心に勇気を与えている<br><br>山田哲子様<br>あなたの存在そのものが<br>この世界を照らす光<br>永遠に輝き続けますように',
+        poemAuthor: '— イクホ🫶フォーラム詩人',
+        poemAboutTitle: 'この詩について',
+        poemAboutDesc: '山田哲子様への深い尊敬の念を込めて作られたこの詩は、知識と温かさを兼ね備えた素晴らしい人柄を表現しています。星空のように美しく輝く智慧と、多くの人々に希望を与え続ける姿勢への讃美の歌です。',
+        poemMessageTitle: '詩に込めたメッセージ',
+        poemMessageDesc: 'この詩は単なる賛辞ではなく、山田哲子様が体現されている「知識を通じて人々を支える」という崇高な精神への敬意を表しています。その光は永遠に多くの人々の心を照らし続けることでしょう。',
+        language: '言語',
+        theme: 'テーマ',
+        toggleTheme: 'ダーク',
+        lightTheme: 'ライト',
+        weightGraphHeader: '[ ジュリアンさんの体重グラフ - Weight Tracker ]',
+        weightGraphIntro: 'ジュリアンさんの体重変化をグラフで表示',
+        weightGraphDesc: '毎回のアクセスで80～110kgの間でランダムに変化します',
+        currentWeightTitle: '現在の体重',
+        weightStatsTitle: '統計情報'
+    },
+    en: {
+        accessCounter: 'Access Counter',
+        today: 'Today',
+        yesterday: 'Yesterday',
+        milestoneGet: 'Milestone Get!',
+        congratulations: 'Congratulations!',
+        milestoneVisitor: 'You are the',
+        milestoneVisitorSuffix: 'visitor!',
+        milestoneReport: 'Please report your milestone!',
+        reportMilestone: 'Report Milestone',
+        close: 'Close',
+        siteTitle: 'Ikuho🫶 Forum - Wow, this is the best😊',
+        siteName: 'Ikuho Forum',
+        system: 'System',
+        systemInfo: 'MS-DOS 6.22 Compatible',
+        processor: 'Processor',
+        memory: 'Memory',
+        memoryInfo: '4 Megabytes',
+        status: 'Status',
+        connected: 'Connected',
+        menuHome: 'Home',
+        menuFeatures: 'Features',
+        menuOgiri: 'Ogiri',
+        menuSpotDiff: 'Spot the Difference',
+        menuWeightGraph: 'Weight Graph',
+        menuContact: 'Contact',
+        stockTicker: '[ Stock Ticker - Real-time Stock Information ]',
+        loadingStocks: 'Loading stock data...',
+        mainTerminal: '[ Main Terminal - Ikuho🫶 Room ]',
+        welcomeMsg: 'Welcome to Ikuho Forum System v1.0😊',
+        aiPlatform: 'AI-powered development platform, amazing right?🙏',
+        dailyOgiri: '[ Today\'s Ogiri Board ]',
+        dailyOgiriBoard: '[ Today\'s Ogiri Board ]',
+        loading: 'Loading...',
+        submitAnswer: '💭 Please submit your answer!',
+        responsePlaceholder: 'Write a funny answer here😊 Wow, this is fun🙏',
+        submitResponse: 'Submit Answer',
+        clear: 'Clear',
+        systemFeatures: '[ System Features ]',
+        aiAssistant: 'AI Assistant',
+        aiAssistantDesc: 'Wow, this is truly amazing AI feature😊 Supports everything from programming to design🙏 Excellent work!',
+        highPerformance: 'High Performance',
+        highPerformanceDesc: 'Really very fast😄 Super high-speed processing with optimized algorithms! Efficient right? Great work🍺',
+        security: 'Security',
+        securityDesc: 'Security is completely guaranteed so don\'t worry😊 Protected with latest protocols🙏 Safety first!',
+        innovation: 'Innovation',
+        innovationDesc: 'Wow, this is truly innovative😊 Uses latest technologies🙏 Modern right? Great work🍻',
+        globalReady: 'Global Ready',
+        globalReadyDesc: 'Can be deployed globally😄 Supports multiple languages and works worldwide🙏 Amazing right?',
+        mobileSupport: 'Mobile Support',
+        mobileSupportDesc: 'Perfect on both phone and computer😊 Responsive design usable anywhere🙏 Convenient right?',
+        statusInfo: 'Status: Connected | Users: 42 | Time: ',
+        keyHelp: 'F1=Help | F2=Save | F3=Load | F10=Exit',
+        nikkeiIndex: 'Nikkei Index',
+        updateTime: 'Update Time',
+        language: 'Language',
+        theme: 'Theme',
+        toggleTheme: 'Dark',
+        lightTheme: 'Light',
+        weightGraphHeader: '[ Julian\'s Weight Graph - Weight Tracker ]',
+        weightGraphIntro: 'Display Julian\'s weight changes in graph',
+        weightGraphDesc: 'Randomly changes between 80-110kg with each access',
+        currentWeightTitle: 'Current Weight',
+        weightStatsTitle: 'Statistics'
+    },
+    zh: {
+        accessCounter: '访问计数器',
+        today: '今天',
+        yesterday: '昨天',
+        milestoneGet: '里程碑达成！',
+        congratulations: '恭喜！',
+        milestoneVisitor: '您是第',
+        milestoneVisitorSuffix: '位访问者！',
+        milestoneReport: '请报告您的里程碑！',
+        reportMilestone: '报告里程碑',
+        close: '关闭',
+        siteTitle: 'Ikuho🫶论坛 - 哇，这是最棒的😊',
+        siteName: 'Ikuho论坛',
+        system: '系统',
+        systemInfo: 'MS-DOS 6.22兼容',
+        processor: '处理器',
+        memory: '内存',
+        memoryInfo: '4兆字节',
+        status: '状态',
+        connected: '已连接',
+        menuHome: '首页',
+        menuFeatures: '功能',
+        menuOgiri: '大喜利',
+        menuSpotDiff: '找不同',
+        menuWeightGraph: '体重图表',
+        menuContact: '联系我们',
+        language: '语言',
+        theme: '主题',
+        toggleTheme: '暗色',
+        lightTheme: '亮色',
+        weightGraphHeader: '[ 朱利安的体重图表 - Weight Tracker ]',
+        weightGraphIntro: '图表显示朱利安的体重变化',
+        weightGraphDesc: '每次访问在80-110公斤之间随机变化',
+        currentWeightTitle: '当前体重',
+        weightStatsTitle: '统计信息'
+    },
+    id: {
+        accessCounter: 'Penghitung Akses',
+        today: 'Hari ini',
+        yesterday: 'Kemarin',
+        milestoneGet: 'Pencapaian Milestone!',
+        congratulations: 'Selamat!',
+        milestoneVisitor: 'Anda adalah pengunjung ke-',
+        milestoneVisitorSuffix: '!',
+        milestoneReport: 'Silakan laporkan milestone Anda!',
+        reportMilestone: 'Laporkan Milestone',
+        close: 'Tutup',
+        siteTitle: 'Forum Ikuho🫶 - Wah, ini yang terbaik😊',
+        siteName: 'Forum Ikuho',
+        system: 'Sistem',
+        systemInfo: 'Kompatibel MS-DOS 6.22',
+        processor: 'Prosesor',
+        memory: 'Memori',
+        memoryInfo: '4 Megabyte',
+        status: 'Status',
+        connected: 'Terhubung',
+        menuHome: 'Beranda',
+        menuFeatures: 'Fitur',
+        menuOgiri: 'Ogiri',
+        menuSpotDiff: 'Cari Perbedaan',
+        menuWeightGraph: 'Grafik Berat',
+        menuContact: 'Kontak',
+        language: 'Bahasa',
+        theme: 'Tema',
+        toggleTheme: 'Gelap',
+        lightTheme: 'Terang'
+    },
+    he: {
+        accessCounter: 'מונה גישות',
+        today: 'היום',
+        yesterday: 'אתמול',
+        milestoneGet: 'השגת אבן דרך!',
+        congratulations: 'מזל טוב!',
+        milestoneVisitor: 'אתה המבקר ה-',
+        milestoneVisitorSuffix: '!',
+        milestoneReport: 'אנא דווח על אבן הדרך שלך!',
+        reportMilestone: 'דווח אבן דרך',
+        close: 'סגור',
+        siteTitle: 'פורום איקהו🫶 - וואו, זה הכי טוב😊',
+        siteName: 'פורום איקהו',
+        system: 'מערכת',
+        systemInfo: 'תואם MS-DOS 6.22',
+        processor: 'מעבד',
+        memory: 'זיכרון',
+        memoryInfo: '4 מגה-בייט',
+        status: 'סטטוס',
+        connected: 'מחובר',
+        menuHome: 'בית',
+        menuFeatures: 'תכונות',
+        menuOgiri: 'אוגירי',
+        menuSpotDiff: 'מצא את ההבדל',
+        menuContact: 'צור קשר',
+        language: 'שפה',
+        theme: 'מושג',
+        toggleTheme: 'כהה',
+        lightTheme: 'בהיר'
+    },
+    ar: {
+        accessCounter: 'عدّاد الزيارات',
+        today: 'اليوم',
+        yesterday: 'أمس',
+        milestoneGet: 'تحقيق معلم!',
+        congratulations: 'تهانينا!',
+        milestoneVisitor: 'أنت الزائر رقم',
+        milestoneVisitorSuffix: '!',
+        milestoneReport: 'يرجى التبليغ عن معلمك!',
+        reportMilestone: 'تبليغ المعلم',
+        close: 'إغلاق',
+        siteTitle: 'منتدى إيكوهو🫶 - واو، هذا رائع حقاً😊',
+        siteName: 'منتدى إيكوهو',
+        system: 'النظام',
+        systemInfo: 'متوافق مع MS-DOS 6.22',
+        processor: 'المعالج',
+        memory: 'الذاكرة',
+        memoryInfo: '4 ميجابايت',
+        status: 'الحالة',
+        connected: 'متصل',
+        menuHome: 'الصفحة الرئيسية',
+        menuFeatures: 'الميزات',
+        menuOgiri: 'أوغيري',
+        menuSpotDiff: 'اكتشف الفرق',
+        menuWeightGraph: 'مخطط الوزن',
+        menuContact: 'اتصل بنا',
+        stockTicker: '[ شريط الأسهم - معلومات الأسهم في الوقت الفعلي ]',
+        loadingStocks: 'جاري تحميل بيانات الأسهم...',
+        mainTerminal: '[ المحطة الرئيسية - غرفة إيكوهو🫶 ]',
+        welcomeMsg: 'مرحباً بكم في نظام منتدى إيكوهو v1.0😊',
+        aiPlatform: 'منصة تطوير مزودة بالذكاء الاصطناعي، رائع أليس كذلك؟🙏',
+        dailyOgiri: '[ لوحة أوغيري اليوم ]',
+        dailyOgiriBoard: '[ لوحة أوغيري اليوم ]',
+        loading: 'جاري التحميل...',
+        submitAnswer: '💭 تفضل بإجابتك!',
+        responsePlaceholder: 'اكتب إجابة مضحكة هنا😊 واو، هذا ممتع🙏',
+        submitResponse: 'إرسال الإجابة',
+        clear: 'مسح',
+        systemFeatures: '[ ميزات النظام ]',
+        aiAssistant: 'مساعد الذكاء الاصطناعي',
+        aiAssistantDesc: 'واو، هذه ميزة ذكاء اصطناعي رائعة حقاً😊 يدعم كل شيء من البرمجة إلى التصميم🙏 عمل رائع!',
+        highPerformance: 'أداء عالي',
+        highPerformanceDesc: 'سريع جداً حقاً😄 معالجة فائقة السرعة بخوارزميات محسنة! فعال أليس كذلك؟ عمل رائع🍺',
+        security: 'الأمان',
+        securityDesc: 'الأمان مضمون بالكامل فلا تقلق😊 محمي بأحدث البروتوكولات🙏 السلامة أولاً!',
+        innovation: 'الابتكار',
+        innovationDesc: 'واو، هذا مبتكر حقاً😊 يستخدم أحدث التقنيات🙏 حديث أليس كذلك؟ عمل رائع🍻',
+        globalReady: 'جاهز عالمياً',
+        globalReadyDesc: 'يمكن نشره على نطاق عالمي😄 يدعم عدة لغات ويعمل عالمياً🙏 رائع أليس كذلك؟',
+        mobileSupport: 'دعم الهواتف المحمولة',
+        mobileSupportDesc: 'مثالي على الهاتف والكمبيوتر😊 تصميم متجاوب يمكن استخدامه في أي مكان🙏 مريح أليس كذلك؟',
+        statusInfo: 'الحالة: متصل | المستخدمون: 42 | الوقت: ',
+        keyHelp: 'F1=المساعدة | F2=حفظ | F3=تحميل | F10=خروج',
+        nikkeiIndex: 'مؤشر نيكي',
+        updateTime: 'وقت التحديث',
+        language: 'اللغة',
+        theme: 'المظهر',
+        toggleTheme: 'داكن',
+        lightTheme: 'فاتح'
+    }
+};
+
+let currentLanguage = localStorage.getItem('selectedLanguage') || 'ja';
+let currentTheme = localStorage.getItem('selectedTheme') || 'dark';
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Update text content
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key === 'statusInfo') {
+                // Handle special case for status bar with time span
+                const timeSpan = element.querySelector('#currentTime');
+                if (timeSpan) {
+                    const timeValue = timeSpan.textContent;
+                    element.innerHTML = translations[lang][key] + '<span id="currentTime">' + timeValue + '</span>';
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+    
+    // Update HTML lang and dir attributes
+    const html = document.documentElement;
+    html.setAttribute('lang', lang);
+    
+    // Set text direction based on language
+    if (lang === 'he' || lang === 'ar') {
+        html.setAttribute('dir', 'rtl');
+    } else {
+        html.setAttribute('dir', 'ltr');
+    }
+    
+    // Update page title
+    if (translations[lang] && translations[lang].siteTitle) {
+        document.title = translations[lang].siteTitle;
+    }
+    
+    // Update ticker content
+    updateTicker();
+    
+    // Update theme button text
+    const themeButton = document.getElementById('themeToggle');
+    if (currentTheme === 'light') {
+        const lightTexts = {
+            'ja': 'ライト',
+            'en': 'Light',
+            'zh': '亮色',
+            'ar': 'فاتح',
+            'id': 'Terang',
+            'he': 'בהיר'
+        };
+        themeButton.textContent = lightTexts[lang] || 'Light';
+    } else {
+        const darkTexts = {
+            'ja': 'ダーク',
+            'en': 'Dark',
+            'zh': '暗色',
+            'ar': 'داكن',
+            'id': 'Gelap',
+            'he': 'כהה'
+        };
+        themeButton.textContent = darkTexts[lang] || 'Dark';
+    }
+}
+
+function toggleTheme() {
+    const body = document.body;
+    const themeButton = document.getElementById('themeToggle');
+    
+    if (currentTheme === 'dark') {
+        body.classList.add('light-mode');
+        currentTheme = 'light';
+        localStorage.setItem('selectedTheme', 'light');
+        
+        // Update button text for all languages
+        const lightTexts = {
+            'ja': 'ライト',
+            'en': 'Light',
+            'zh': '亮色',
+            'ar': 'فاتح',
+            'id': 'Terang',
+            'he': 'בהיר'
+        };
+        themeButton.textContent = lightTexts[currentLanguage] || 'Light';
+        themeButton.setAttribute('data-i18n', 'lightTheme');
+    } else {
+        body.classList.remove('light-mode');
+        currentTheme = 'dark';
+        localStorage.setItem('selectedTheme', 'dark');
+        
+        // Update button text for all languages
+        const darkTexts = {
+            'ja': 'ダーク',
+            'en': 'Dark',
+            'zh': '暗色',
+            'ar': 'داكن',
+            'id': 'Gelap',
+            'he': 'כהה'
+        };
+        themeButton.textContent = darkTexts[currentLanguage] || 'Dark';
+        themeButton.setAttribute('data-i18n', 'toggleTheme');
+    }
+}
+
+function initTheme() {
+    const body = document.body;
+    const themeButton = document.getElementById('themeToggle');
+    
+    if (currentTheme === 'light') {
+        body.classList.add('light-mode');
+        const lightTexts = {
+            'ja': 'ライト',
+            'en': 'Light',
+            'zh': '亮色',
+            'ar': 'فاتح',
+            'id': 'Terang',
+            'he': 'בהיר'
+        };
+        themeButton.textContent = lightTexts[currentLanguage] || 'Light';
+        themeButton.setAttribute('data-i18n', 'lightTheme');
+    } else {
+        const darkTexts = {
+            'ja': 'ダーク',
+            'en': 'Dark',
+            'zh': '暗色',
+            'ar': 'داكن',
+            'id': 'Gelap',
+            'he': 'כהה'
+        };
+        themeButton.textContent = darkTexts[currentLanguage] || 'Dark';
+        themeButton.setAttribute('data-i18n', 'toggleTheme');
+    }
+}
+
+function initLocalization() {
+    // Set the language selector
+    document.getElementById('languageSelector').value = currentLanguage;
+    
+    // Apply the current language
+    changeLanguage(currentLanguage);
+}
+
+// CSS アニメーション追加
+const flashStyle = document.createElement('style');
+flashStyle.textContent = `
+@keyframes flash {
+    0%, 100% { background-color: #000; }
+    50% { background-color: #001100; }
+}
+`;
+document.head.appendChild(flashStyle);
+
+// 初期化
+document.addEventListener('DOMContentLoaded', function() {
+    initTheme(); // テーマ初期化
+    initLocalization(); // 多言語対応初期化
+    initAccessCounter(); // アクセスカウンター初期化
+    updateOgiriDisplay();
+    updateTime();
+    updateTicker(); // 初回ティッカー読み込み
+    initMachigaiGame(); // 間違い探しゲーム初期化
+    initWeightGraph(); // 体重グラフ初期化
+    setInterval(updateTime, 1000);
+    setInterval(updateTicker, 30000); // 30秒ごとにティッカー更新
+});
+
+// 間違い探しゲーム機能
+let foundDifferences = 0;
+const totalDifferences = 5;
+let gameCompleted = false;
+
+function initMachigaiGame() {
+    const markers = document.querySelectorAll('.difference-marker');
+    markers.forEach(marker => {
+        marker.addEventListener('click', function() {
+            if (!this.classList.contains('found')) {
+                this.classList.add('found');
+                foundDifferences++;
+                updateScore();
+                
+                // 効果音的なフィードバック
+                this.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+                
+                if (foundDifferences === totalDifferences) {
+                    setTimeout(() => {
+                        alert('🎉 おめでとうございます！\nすべての間違いを見つけました！\n\n発見した間違い:\n1. @@@ → ×××\n2. ◯ → ◉\n3. v1.0 → v2.0\n4. exit → quit\n5. 42 → 43');
+                        gameCompleted = true;
+                    }, 500);
+                }
+            }
+        });
+    });
+}
+
+function updateScore() {
+    document.getElementById('foundCount').textContent = foundDifferences;
+}
+
+function showHint() {
+    const hintText = document.getElementById('hintText');
+    if (hintText.style.display === 'none') {
+        hintText.style.display = 'block';
+        
+        // 段階的なヒント
+        const hints = [
+            "ヒント: 文字や記号、数字に注意してください！",
+            "より具体的なヒント: 顔の表情、バージョン番号、ユーザー数、コマンド名をチェックしてください！",
+            "詳細なヒント: @マーク、目の形、システムバージョン、exitコマンド、42という数字を見てください！"
+        ];
+        
+        const currentHint = Math.min(foundDifferences, hints.length - 1);
+        hintText.textContent = hints[currentHint];
+    } else {
+        hintText.style.display = 'none';
+    }
+}
+
+function resetGame() {
+    const markers = document.querySelectorAll('.difference-marker');
+    markers.forEach(marker => {
+        marker.classList.remove('found');
+        marker.style.transform = 'scale(1)';
+    });
+    foundDifferences = 0;
+    gameCompleted = false;
+    updateScore();
+    document.getElementById('hintText').style.display = 'none';
+}
+
+function showAll() {
+    if (confirm('本当に答えを見ますか？')) {
+        const markers = document.querySelectorAll('.difference-marker');
+        markers.forEach(marker => {
+            marker.classList.add('found');
+        });
+        foundDifferences = totalDifferences;
+        updateScore();
+        
+        setTimeout(() => {
+            alert('答え:\n\n1. 左上の顔: @@@ → ×××\n2. 右上の顔の目: ◯ → ◉\n3. システムバージョン: v1.0 → v2.0\n4. コマンド: exit → quit\n5. ユーザー数: 42 → 43');
+        }, 500);
+    }
+}
+
+// 大喜利回答機能
+function submitOgiriResponse() {
+    const response = document.getElementById('ogiriResponse').value.trim();
+    
+    if (!response) {
+        alert('回答を入力してください😊');
+        return;
+    }
+    
+    if (response.length > 500) {
+        alert('回答は500文字以内でお願いします🙏');
+        return;
+    }
+    
+    // 送信確認
+    if (confirm(`この回答を送信しますか？\n\n「${response}」\n\nわあ、面白そうですね😊`)) {
+        // 送信処理（実際のバックエンドがある場合は適切なAPIエンドポイントに送信）
+        const ogiriData = {
+            prompt: getDailyOgiri(),
+            response: response,
+            timestamp: new Date().toISOString(),
+            date: new Date().toLocaleDateString('ja-JP')
+        };
+        
+        // ローカルストレージに保存（デモンストレーション用）
+        const responses = JSON.parse(localStorage.getItem('ogiriResponses') || '[]');
+        responses.push(ogiriData);
+        localStorage.setItem('ogiriResponses', JSON.stringify(responses));
+        
+        alert('🎉 回答を送信しました！\nありがとうございます😊\n\nわあ、面白い回答ですね🙏');
+        
+        // フォームをクリア
+        document.getElementById('ogiriResponse').value = '';
+        
+        // 送信後のエフェクト
+        const submitButton = event.target;
+        const originalText = submitButton.textContent;
+        submitButton.textContent = '送信完了!';
+        submitButton.style.background = '#00ff00';
+        submitButton.style.color = '#000';
+        
+        setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.style.background = 'transparent';
+            submitButton.style.color = '#00ff00';
+        }, 2000);
+    }
+}
+
+function clearOgiriResponse() {
+    if (confirm('回答をクリアしますか？')) {
+        document.getElementById('ogiriResponse').value = '';
+        document.getElementById('ogiriResponse').focus();
+    }
+}
+
+// 体重グラフ機能
+let weightData = [];
+let weightChart = null;
+
+function generateWeightData() {
+    const today = new Date();
+    const savedData = localStorage.getItem('julianWeightData');
+    
+    if (savedData) {
+        weightData = JSON.parse(savedData);
+        // 最新のデータが今日のものでない場合、新しいデータを追加
+        const lastEntry = weightData[weightData.length - 1];
+        if (!lastEntry || new Date(lastEntry.date).toDateString() !== today.toDateString()) {
+            addNewWeightEntry(today);
+        }
+    } else {
+        // 初回の場合、過去30日分のデータを生成
+        weightData = [];
+        for (let i = 29; i >= 0; i--) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            addNewWeightEntry(date);
+        }
+    }
+    
+    // アクセスごとに新しいデータポイントを追加（同じ日でも時間を変えて）
+    const randomWeight = Math.random() * 30 + 80; // 80-110kg
+    const currentTime = new Date();
+    weightData.push({
+        date: currentTime.toISOString(),
+        weight: Math.round(randomWeight * 10) / 10, // 小数点第1位まで
+        displayDate: currentTime.toLocaleDateString('ja-JP'),
+        displayTime: currentTime.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })
+    });
+    
+    // 最新50件のデータのみ保持
+    if (weightData.length > 50) {
+        weightData = weightData.slice(-50);
+    }
+    
+    localStorage.setItem('julianWeightData', JSON.stringify(weightData));
+    
+    return weightData;
+}
+
+function addNewWeightEntry(date) {
+    const randomWeight = Math.random() * 30 + 80; // 80-110kg
+    weightData.push({
+        date: date.toISOString(),
+        weight: Math.round(randomWeight * 10) / 10,
+        displayDate: date.toLocaleDateString('ja-JP'),
+        displayTime: date.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })
+    });
+}
+
+function drawWeightChart() {
+    const canvas = document.getElementById('weightChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    
+    // キャンバスをクリア
+    ctx.clearRect(0, 0, width, height);
+    
+    if (weightData.length === 0) return;
+    
+    // グラフの余白
+    const padding = 50;
+    const graphWidth = width - 2 * padding;
+    const graphHeight = height - 2 * padding;
+    
+    // 最小値と最大値を設定
+    const minWeight = 75;
+    const maxWeight = 115;
+    const weightRange = maxWeight - minWeight;
+    
+    // 軸を描画
+    ctx.strokeStyle = '#00ff00';
+    ctx.lineWidth = 2;
+    ctx.font = '12px monospace';
+    ctx.fillStyle = '#00ff00';
+    
+    // Y軸（体重）
+    ctx.beginPath();
+    ctx.moveTo(padding, padding);
+    ctx.lineTo(padding, height - padding);
+    ctx.stroke();
+    
+    // X軸（時間）
+    ctx.beginPath();
+    ctx.moveTo(padding, height - padding);
+    ctx.lineTo(width - padding, height - padding);
+    ctx.stroke();
+    
+    // Y軸の目盛り
+    for (let i = 0; i <= 8; i++) {
+        const weight = minWeight + (weightRange * i / 8);
+        const y = height - padding - (graphHeight * i / 8);
+        
+        ctx.beginPath();
+        ctx.moveTo(padding - 5, y);
+        ctx.lineTo(padding + 5, y);
+        ctx.stroke();
+        
+        ctx.fillText(weight.toFixed(0) + 'kg', 5, y + 4);
+    }
+    
+    // データ点を描画
+    if (weightData.length > 1) {
+        ctx.strokeStyle = '#00ff00';
+        ctx.fillStyle = '#00ff00';
+        ctx.lineWidth = 2;
+        
+        ctx.beginPath();
+        for (let i = 0; i < weightData.length; i++) {
+            const x = padding + (graphWidth * i / (weightData.length - 1));
+            const normalizedWeight = (weightData[i].weight - minWeight) / weightRange;
+            const y = height - padding - (graphHeight * normalizedWeight);
+            
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+            
+            // データ点を描画
+            ctx.save();
+            ctx.fillStyle = '#00ff00';
+            ctx.beginPath();
+            ctx.arc(x, y, 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.restore();
+        }
+        ctx.stroke();
+    }
+    
+    // グラフのタイトル
+    ctx.font = '16px monospace';
+    ctx.fillStyle = '#00ff00';
+    ctx.textAlign = 'center';
+    ctx.fillText('ジュリアンさんの体重変化', width / 2, 30);
+    
+    // 軸ラベル
+    ctx.font = '12px monospace';
+    ctx.fillText('体重 (kg)', 25, height / 2);
+    ctx.fillText('時間', width / 2, height - 10);
+}
+
+function updateWeightStats() {
+    if (weightData.length === 0) return;
+    
+    const weights = weightData.map(d => d.weight);
+    const currentWeight = weights[weights.length - 1];
+    const avgWeight = weights.reduce((a, b) => a + b, 0) / weights.length;
+    const maxWeight = Math.max(...weights);
+    const minWeight = Math.min(...weights);
+    
+    document.getElementById('currentWeight').textContent = currentWeight.toFixed(1) + 'kg';
+    document.getElementById('avgWeight').textContent = avgWeight.toFixed(1) + 'kg';
+    document.getElementById('maxWeight').textContent = maxWeight.toFixed(1) + 'kg';
+    document.getElementById('minWeight').textContent = minWeight.toFixed(1) + 'kg';
+}
+
+function initWeightGraph() {
+    generateWeightData();
+    drawWeightChart();
+    updateWeightStats();
+}
+
+
+// キーボードショートカット
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'F1') {
+        e.preventDefault();
+        alert('ヘルプ: ナビゲーションメニューを使ってセクションを移動してください。\nF1=ヘルプ | F2=保存 | F3=読込 | F10=終了');
+    }
+    if (e.key === 'F10') {
+        e.preventDefault();
+        if (confirm('フォーラムシステムを終了しますか？')) {
+            window.close();
+        }
+    }
+});
+</script>
+</body>
 </html>
