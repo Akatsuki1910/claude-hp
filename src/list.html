@@ -7,10 +7,10 @@
     <script>
       function handleGetData() {
         fetch("/api/commands/list")
-          .then((response) => response.text())
+          .then((response) => response.json())
           .then((data) => {
             document.querySelector("ul").innerHTML = "";
-            data
+            data.text
               .split("\n")
               .filter((line) => line.trim() !== "")
               .forEach((command) => {
