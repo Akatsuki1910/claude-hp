@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+    <script>
+      function handleGetData() {
+        fetch("/api/commands/list")
+          .then((response) => response.text())
+          .then((data) => {
+            document.querySelector("ul").innerHTML = "";
+            data
+              .split("\n")
+              .filter((line) => line.trim() !== "")
+              .forEach((command) => {
+                const li = document.createElement("li");
+                li.textContent = command;
+                document.querySelector("ul").appendChild(li);
+              });
+
+            const nowDate = new Date();
+            document.getElementById("last-updated").textContent =
+              nowDate.toLocaleTimeString();
+          });
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        handleGetData();
+
+        setInterval(() => {
+          handleGetData();
+        }, 60000);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>List</h1>
+    <p>Last updated: <span id="last-updated"></span></p>
+    <button onclick="handleGetData()">Get Commands</button>
+    <ul aria-busy="true"></ul>
+  </body>
+</html>

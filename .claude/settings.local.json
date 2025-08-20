@@ -19,8 +19,11 @@
       "Bash(rm:*)",
       "Write(conf/**)",
       "Write(./commands.txt)",
+      "Write(./memory.txt)",
       "Write(src/form.html)",
-      "Edit(src/form.html)"
+      "Write(src/list.html)",
+      "Edit(src/form.html)",
+      "Edit(src/list.html)"
     ]
   }
 }

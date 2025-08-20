@@ -14,3 +14,4 @@ services:
     build: .
     volumes:
       - ./commands.txt:/app/commands.txt
+      - ./memory.txt:/app/memory.txt
